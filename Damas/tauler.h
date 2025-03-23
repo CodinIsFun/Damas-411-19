@@ -8,18 +8,26 @@ using namespace std;
 class Tauler
 {
 public:
-	Tauler() : tornBlanques(true) {}
+	Tauler() : m_tornBlanques(true), m_filaFitxaSeleccionada(0), m_colFitxaSeleccionada(0) {}
 	void inicialitza(const string& nomFitxer);
-	void actualitzaMovimentsValids(); // Recorre todas las Fitxes y actualiza su variable Moviment con todos los movimientos validos
+	void actualitzaMovimentsValids() const; // Recorre todas las Fitxes y actualiza su variable Moviment con todos los movimientos validos
 	void getPosicionsPossibles(const Posicio& origen, int& nPosicions, Posicio posicionsPossibles[]);
 	bool mouFitxa(const Posicio& origen, const Posicio& desti);
 	string toString() const;
 
-	void llegeixTauler(const string& nomFitxer, char tauler[N_FILES][N_COLUMNES]);
-	void mostraTauler();
+	
+	void seleccionaFitxa(const string& posFitxa);
+	void mouFitxa(int filaFitxa, int colFitxa);
 
 private:
+	int m_filaFitxaSeleccionada;
+	int m_colFitxaSeleccionada;
 	Fitxa m_tauler[N_FILES][N_COLUMNES];
 	char m_taulerEnChars[N_FILES][N_COLUMNES];
-	bool tornBlanques;
+	bool m_tornBlanques;
+
+	//inicialitza
+	void llegeixTauler(const string& nomFitxer, char tauler[N_FILES][N_COLUMNES]) const;
+	//actualitzaMovimentsValids
+
 };

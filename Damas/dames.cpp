@@ -6,5 +6,5 @@ int main()
 	Tauler tauler;
 
 	tauler.inicialitza("dames_input.txt");
-	tauler.mostraTauler();
+	cout << tauler.toString();
 }

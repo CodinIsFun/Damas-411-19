@@ -20,6 +20,7 @@ typedef enum
 class Fitxa
 {
 public:
+	Fitxa() : m_viva(true) {}
 	//getters
 	TipusFitxa getTipusFitxa() { return m_tipusFitxa; }
 	ColorFitxa getColorFitxa() { return m_colorFitxa; }
@@ -36,5 +37,6 @@ private:
 	Moviment m_moviments[100];
 	TipusFitxa m_tipusFitxa;
 	ColorFitxa m_colorFitxa;
+	bool m_viva;
 };
 
