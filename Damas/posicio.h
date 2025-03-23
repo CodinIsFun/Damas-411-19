@@ -1,19 +1,21 @@
 #pragma once
 #include <string>
+#include <fstream>
 using namespace std;
 
 
-int N_FILES = 8;
-int N_COLUMNES = 8;
+const int N_FILES = 8;
+const int N_COLUMNES = 8;
 
 class Posicio
 {
 public:
-	//Posicio(); <--No crec que sigui necessari una constructor per defecte pero ho deixo x recordar que segons el campus virtual hi ha d ser.
-	Posicio(int fila, int columna) 
+	Posicio() : m_fila(0), m_columna(0) {}; //<--No crec que sigui necessari una constructor per defecte pero ho deixo x recordar que segons el campus virtual hi ha d ser.
+	Posicio(const string& posicio) // Borra comentario cuando lo veas: los argumentos (int fila, int columna) tienen que ser (const string& posicio)
 	{ 
-		m_fila = fila;
-		m_columna = columna; 
+		fromString(posicio);
+		//m_fila = fila;
+		//m_columna = columna; 
 	};
 	int getFila() const 
 	{
@@ -29,3 +31,6 @@ public:
 private:
 	int m_fila, m_columna;
 };
+
+ifstream& operator>>(ifstream& fitxer, Posicio& posicio);
+ofstream& operator<<(ofstream& fitxer, const Posicio& posicio);
