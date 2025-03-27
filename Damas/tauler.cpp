@@ -6,7 +6,7 @@ using namespace std;
 
 void Tauler::inicialitza(const string& nomFitxer)
 {
-	//Implementar: if nomFitxer == null -> empieza de 0
+	//Implementar: if nomFitxer == null -> empieza de 0 ///////////////////////////////////
 	llegeixTauler(nomFitxer, m_taulerEnChars);
 
 	for (int fila = 0; fila < N_FILES; fila++)
@@ -37,7 +37,6 @@ void Tauler::inicialitza(const string& nomFitxer)
 			}
 		}
 	}
-	mostraTauler();
 }
 
 void Tauler::actualitzaMovimentsValids() const
@@ -50,7 +49,7 @@ void Tauler::getPosicionsPossibles(const Posicio& origen, int& nPosicions, Posic
 
 }
 
-bool Tauler::mouFitxa(const Posicio& origen, const Posicio& desti) // Esto hace que la array Fitxes y la matrix
+bool Tauler::mouFitxa(const Posicio& origen, const Posicio& desti) // Esto hace que la array Fitxes y la matri
 {
 	return false;
 }

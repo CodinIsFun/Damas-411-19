@@ -16,6 +16,17 @@ void Posicio::fromString(const string& pos) {
 	m_columna = pos[0] - 'a';
 }
 
+bool Posicio::operator==(const Posicio& posicio) const
+{
+	if (m_fila == posicio.m_fila && m_columna == posicio.m_columna)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
 ifstream& operator>>(ifstream& fitxer, Posicio& posicio)
 {

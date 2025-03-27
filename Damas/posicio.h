@@ -17,17 +17,18 @@ public:
 		//m_fila = fila;
 		//m_columna = columna; 
 	};
-	int getFila() const 
-	{
-		return m_fila;
-	};
+	//getters
+	int getFila() const { return m_fila; }
+	int getColumna() const { return m_columna; }
+	//setters
+	void setFila(int fila) { m_fila = fila; }
+	void setColumna(int columna) { m_columna = columna; }
 
-	int getColumna() const 
-	{
-		return m_columna;
-	};
 	string toString() const;
 	void fromString(const string& pos);
+	bool operator==(const Posicio& posicio) const;
+
+
 private:
 	int m_fila, m_columna;
 };
